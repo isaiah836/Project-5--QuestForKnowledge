@@ -409,6 +409,7 @@ GameObject:
   - component: {fileID: 711640930}
   - component: {fileID: 711640929}
   - component: {fileID: 711640928}
+  - component: {fileID: 711640931}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -447,7 +448,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 1.7414703
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -470,12 +471,24 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 711640927}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: -4.57, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &711640931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 711640927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee874c92534554c4dbdc821b0bf35281, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 556511748}
 --- !u!1 &1701493356
 GameObject:
   m_ObjectHideFlags: 0
@@ -580,8 +593,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 556511748}
   playerLives: 3
-  playerMoveSpeed: 5
-  jumpHeight: 10
+  playerMoveSpeed: 4
+  jumpHeight: 5
   numofJumps: 0
 --- !u!4 &1729731998
 Transform:
