@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullets : MonoBehaviour {
+public class FireBall : MonoBehaviour {
 
 	private Transform tf;
 	private float despawnTimer;
@@ -11,7 +11,7 @@ public class Bullets : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		tf = GetComponent<Transform>();
-		despawnTimer = GameManager.instance.bulletLife; //the length of the bullets live
+		despawnTimer = GameManager.instance.fireBallLife; //the length of the bullets live
 	}
 	
 	// Update is called once per frame
@@ -25,7 +25,7 @@ public class Bullets : MonoBehaviour {
 		}
 
 		//moves the bullet
-		tf.position += (transform.right * (Time.deltaTime * GameManager.instance.bulletSpeed));
+		tf.position += (transform.right * (Time.deltaTime * GameManager.instance.fireBallSpeed));
 	}
 	void OnTriggerEnter2D(Collider2D collision)
 	{

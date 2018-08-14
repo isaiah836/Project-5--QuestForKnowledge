@@ -7,7 +7,6 @@ public class PlayerAnimationScript : MonoBehaviour
 
 	public Animator an;
 	public Rigidbody2D rb;
-	public SpriteRenderer sr;
 	private ControllerPlayer PcS;
 
 	// Use this for initialization
@@ -15,7 +14,6 @@ public class PlayerAnimationScript : MonoBehaviour
 	{
 		an = GetComponent<Animator>();
 		rb = GetComponent<Rigidbody2D>();
-		sr = GetComponent<SpriteRenderer>();
 		PcS = GetComponent<ControllerPlayer>();
 	}
 

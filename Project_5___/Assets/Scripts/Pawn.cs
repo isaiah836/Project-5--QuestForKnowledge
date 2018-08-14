@@ -4,7 +4,10 @@ using UnityEngine;
 
 public abstract class Pawn : MonoBehaviour {
 
-	public virtual void MoveLeft()
+    public Transform WP1;//Waypoint for the ai
+    public Transform WP2;//waypoint for the ai
+
+    public virtual void MoveLeft()
     {
 
     }

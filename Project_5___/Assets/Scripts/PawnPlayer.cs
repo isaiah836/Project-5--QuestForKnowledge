@@ -13,6 +13,7 @@ public class PawnPlayer : Pawn {
 
     // Use this for initialization
     void Start () {
+        startPosition = transform.position;
 		tf = GetComponent<Transform>();
         rb = GetComponent<Rigidbody2D>();
 	}

@@ -10,13 +10,16 @@ public class ControllerPlayer : Controller {
     public bool isGrounded; // bool to see if player is grounded
     public AudioClip jumpSound; // sound when player jumps
     public AudioClip deathSound; // sound when player dies
+    public AudioClip shootSound;//sound when player attacks
     public AudioSource audio; // grabs audio component
+    public float shootDelay;
 
 	public SpriteRenderer sr;
 
 	public bool isMove; // a bool to see if the player is moving
 	public bool isJump; // a bool that will tell if player is jumping
     public bool isShoot; // bool for shooting
+    public bool canShoot = true;
 
 	// Use this for initialization
 	void Start () {
@@ -49,15 +52,21 @@ public class ControllerPlayer : Controller {
 
         if (Input.GetKeyDown(KeyCode.Space) && isJump == false)
         {
-            if (sr.flipX == false)
+            if (canShoot)
             {
-                isShoot = true;
-                pawn.ShootForward();
-            }
-            if (sr.flipX == true)
-            {
-                isShoot = true;
-                pawn.ShootBackward();
+                audio.PlayOneShot(shootSound);
+                canShoot = false;
+                StartCoroutine(Shooting());
+                if (sr.flipX == false)
+                {
+                    isShoot = true;
+                    pawn.ShootForward();
+                }
+                if (sr.flipX == true)
+                {
+                    isShoot = true;
+                    pawn.ShootBackward();
+                }
             }
         }
         if (Input.GetKeyUp(KeyCode.Space))
@@ -65,8 +74,8 @@ public class ControllerPlayer : Controller {
             isShoot = false;
         }
 
-		// if space is pressed player jumps and makes jump sound
-        if(Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
+        // if space is pressed player jumps and makes jump sound
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
         {
 			if (GameManager.instance.numofJumps < 1)
             {
@@ -84,4 +93,10 @@ public class ControllerPlayer : Controller {
 			isJump = false;
         }
 	}
+
+    IEnumerator Shooting()
+    {
+        yield return new WaitForSeconds(shootDelay);
+        canShoot = true;
+    }
 }

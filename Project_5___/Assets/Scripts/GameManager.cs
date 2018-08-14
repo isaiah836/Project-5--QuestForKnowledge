@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
@@ -16,9 +17,14 @@ public class GameManager : MonoBehaviour {
 	public float jumpHeight;
 	public float numofJumps;
 
-    [Header("Bullet Settings")]
-    public float bulletLife;
-    public float bulletSpeed;
+    [Header("FireBall Settings")]
+    public float fireBallLife;
+    public float fireBallSpeed;
+
+    [Header("Goblin Settings")]
+    public float goblinMoveSpeed;
+
+    public Text pLives;
 
 
 
@@ -33,7 +39,8 @@ public class GameManager : MonoBehaviour {
 			Destroy(gameObject);
 		}
 		instance = this;
-	}
+        pLives.text = ("Player Lives = " + playerLives);
+    }
 	
 	// Update is called once per frame
 	void Update () {
