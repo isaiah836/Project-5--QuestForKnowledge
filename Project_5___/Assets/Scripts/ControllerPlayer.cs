@@ -7,7 +7,7 @@ public class ControllerPlayer : Controller {
     public LayerMask ground; // checks which layaer mask to check for 
     public GameObject groundCheck; //the ground check gameObject
     public float groundCheckRadius; //ground check radius 
-    public bool grounded; // bool to see if player is grounded
+    public bool isGrounded; // bool to see if player is grounded
     public AudioClip jumpSound; // sound when player jumps
     public AudioClip deathSound; // sound when player dies
     public AudioSource audio; // grabs audio component
@@ -24,7 +24,7 @@ public class ControllerPlayer : Controller {
 
 	// Update is called once per frame
 	void Update() {
-		grounded = Physics2D.OverlapCircle(groundCheck.transform.position, groundCheckRadius, ground); //this checks to see if the player is grounded 
+		isGrounded = Physics2D.OverlapCircle(groundCheck.transform.position, groundCheckRadius, ground); //this checks to see if the player is grounded 
 		
 
 		//this chunk of code moves the player
@@ -58,7 +58,7 @@ public class ControllerPlayer : Controller {
             
 		}
 		// if player is grounded reset jumps to zero
-        if (grounded)
+        if (isGrounded)
         {
             GameManager.instance.numofJumps = 0;
 			isJump = false;
