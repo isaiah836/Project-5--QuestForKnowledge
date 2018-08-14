@@ -7,9 +7,12 @@ public class PawnPlayer : Pawn {
 	private Transform tf;
     private Rigidbody2D rb;
 	public Vector3 startPosition; //the position this pawn starts from
+    public GameObject bulletPrefab;// prefab of bullet object
+    public Transform FireBallSpawnFront;// Spawn for fireball bullets
+    public Transform FireBallSpawnBack;// Second place for fireballs to spanw out of 
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		tf = GetComponent<Transform>();
         rb = GetComponent<Rigidbody2D>();
 	}
@@ -32,4 +35,12 @@ public class PawnPlayer : Pawn {
 	{
         rb.velocity = Vector3.up * GameManager.instance.jumpHeight;
 	}
+    public override void ShootForward() //Shoots a FireBall
+    {
+        GameObject bullet = Instantiate(bulletPrefab, FireBallSpawnFront.position, FireBallSpawnFront.rotation);
+    }
+    public override void ShootBackward() //Shoots a FireBall
+    {
+        GameObject bullet = Instantiate(bulletPrefab, FireBallSpawnBack.position, FireBallSpawnBack.rotation);
+    }
 }

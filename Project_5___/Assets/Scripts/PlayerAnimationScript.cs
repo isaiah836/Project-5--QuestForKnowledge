@@ -27,16 +27,22 @@ public class PlayerAnimationScript : MonoBehaviour
 		{
 			an.Play("PlayerJumpAnim");
 		}
-		else if (PcS.isMove == true) // if player is moving play walk animation unless the player is jumping
+        else if (PcS.isShoot == true)
+        {
+            an.Play("Player_Attack");
+        }
+        else if (PcS.isMove == true) // if player is moving play walk animation unless the player is jumping
 		{
-			if (PcS.isJump == false)
+			if (PcS.isJump == false && PcS.isShoot == false)
 			{
 				an.Play("Player_Walk");
 			}
 		}
+        
 		else if (rb.velocity.x == 0)// if player is not moving play idle animation
 		{
 			an.Play("Player_idle");
 		}
+        
 	}
 }

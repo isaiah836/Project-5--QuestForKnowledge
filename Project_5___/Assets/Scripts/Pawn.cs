@@ -4,7 +4,24 @@ using UnityEngine;
 
 public abstract class Pawn : MonoBehaviour {
 
-	public abstract void MoveLeft();
-	public abstract void MoveRight();
-	public abstract void Jump();
+	public virtual void MoveLeft()
+    {
+
+    }
+	public virtual void MoveRight()
+    {
+
+    }
+	public virtual void Jump()
+    {
+
+    }
+    public virtual void ShootForward()
+    {
+
+    }
+    public virtual void ShootBackward()
+    {
+
+    }
 }

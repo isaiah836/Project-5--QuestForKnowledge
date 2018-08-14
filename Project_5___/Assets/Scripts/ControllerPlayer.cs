@@ -16,6 +16,8 @@ public class ControllerPlayer : Controller {
 
 	public bool isMove; // a bool to see if the player is moving
 	public bool isJump; // a bool that will tell if player is jumping
+    public bool isShoot; // bool for shooting
+
 	// Use this for initialization
 	void Start () {
         audio = GetComponent<AudioSource>(); //grabs audi source
@@ -45,8 +47,26 @@ public class ControllerPlayer : Controller {
 			isMove = false;
 		}
 
+        if (Input.GetKeyDown(KeyCode.Space) && isJump == false)
+        {
+            if (sr.flipX == false)
+            {
+                isShoot = true;
+                pawn.ShootForward();
+            }
+            if (sr.flipX == true)
+            {
+                isShoot = true;
+                pawn.ShootBackward();
+            }
+        }
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            isShoot = false;
+        }
+
 		// if space is pressed player jumps and makes jump sound
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
         {
 			if (GameManager.instance.numofJumps < 1)
             {

@@ -16,6 +16,11 @@ public class GameManager : MonoBehaviour {
 	public float jumpHeight;
 	public float numofJumps;
 
+    [Header("Bullet Settings")]
+    public float bulletLife;
+    public float bulletSpeed;
+
+
 
 	// Use this for initialization
 	void Awake () {
