@@ -25,7 +25,7 @@ public class PlayerAnimationScript : MonoBehaviour
 		{
 			an.Play("PlayerJumpAnim");
 		}
-        else if (PcS.isShoot == true)
+        else if (PcS.isShoot == true)//if the player is shooting play the shooting animation
         {
             an.Play("Player_Attack");
         }

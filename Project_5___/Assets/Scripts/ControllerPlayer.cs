@@ -23,7 +23,7 @@ public class ControllerPlayer : Controller {
 
 	// Use this for initialization
 	void Start () {
-        audio = GetComponent<AudioSource>(); //grabs audi source
+        audio = GetComponent<AudioSource>(); //grabs audio source
 		sr = GetComponent<SpriteRenderer>(); // grabs sprite renderer component
 	}
 
@@ -45,11 +45,14 @@ public class ControllerPlayer : Controller {
 			isMove = true;
 			sr.flipX = false;
 		}
+        //this sets the is move bool to false when the player lets go of the any of the movement keys
 		if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.RightArrow))
 		{
 			isMove = false;
 		}
 
+
+        //if the player presses space then it shoots a fireball
         if (Input.GetKeyDown(KeyCode.Space) && isJump == false)
         {
             if (canShoot)
@@ -68,13 +71,14 @@ public class ControllerPlayer : Controller {
                     pawn.ShootBackward();
                 }
             }
-        }
+        } 
+        // this sets is shoot to false when the player releases the space key
         if (Input.GetKeyUp(KeyCode.Space))
         {
             isShoot = false;
         }
 
-        // if space is pressed player jumps and makes jump sound
+        // if up arrow or w key is pressed player jumps and makes jump sound
         if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
         {
 			if (GameManager.instance.numofJumps < 1)
@@ -91,6 +95,10 @@ public class ControllerPlayer : Controller {
         {
             GameManager.instance.numofJumps = 0;
 			isJump = false;
+        }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            GameManager.instance.Quit();
         }
 	}
 

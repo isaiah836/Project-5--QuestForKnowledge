@@ -14,7 +14,7 @@ public class OutofBounds : MonoBehaviour {
 
         
 	}
-    void OnTriggerExit2D(Collider2D other)
+    void OnTriggerExit2D(Collider2D other)// when the player falls out of bound then it resets player to last checkpoint and takes away a live
     {
         if (other.gameObject.tag == "player")
         {
