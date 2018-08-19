@@ -7,24 +7,24 @@ public abstract class Pawn : MonoBehaviour {
     public Transform WP1;//Waypoint for the ai
     public Transform WP2;//waypoint for the ai
 
-    public virtual void MoveLeft()
+    public virtual void MoveLeft()//function for moving left
     {
 
     }
-	public virtual void MoveRight()
-    {
+	public virtual void MoveRight()//function for moving right
+	{
 
     }
-	public virtual void Jump()
-    {
+	public virtual void Jump()//function for moving left jump
+	{
 
     }
-    public virtual void ShootForward()
-    {
+    public virtual void ShootForward()//function for moving shoot forward
+	{
 
     }
-    public virtual void ShootBackward()
-    {
+    public virtual void ShootBackward()//function for moving shoot backward
+	{
 
     }
 }

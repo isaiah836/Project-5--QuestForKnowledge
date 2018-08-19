@@ -5,16 +5,16 @@ using UnityEngine;
 public class PlayerAnimationScript : MonoBehaviour
 {
 
-	public Animator an;
-	public Rigidbody2D rb;
-	private ControllerPlayer PcS;
+	public Animator an;//variable for animator component
+	public Rigidbody2D rb;//variable for rigidbody2D component
+	private ControllerPlayer PcS;//variable for my player controller script
 
 	// Use this for initialization
 	void Start()
 	{
-		an = GetComponent<Animator>();
-		rb = GetComponent<Rigidbody2D>();
-		PcS = GetComponent<ControllerPlayer>();
+		an = GetComponent<Animator>();//grabs animator component
+		rb = GetComponent<Rigidbody2D>();//grabs rigidbody2d component
+		PcS = GetComponent<ControllerPlayer>();//grabs my player controller script
 	}
 
 	// Update is called once per frame

@@ -17,19 +17,23 @@ public class GameManager : MonoBehaviour {
 	public float jumpHeight;
 	public float numofJumps;
 
+	//Fireball setting
     [Header("FireBall Settings")]
     public float fireBallLife;
     public float fireBallSpeed;
 
+	//goblin settings
     [Header("Goblin Settings")]
     public float goblinMoveSpeed;
 
+	//variable for the text that will display the amount of lives left
     public Text pLives;
 
 
 
 	// Use this for initialization
 	void Awake () {
+		//make this gamemanager the only gamemanager and make instance = this
 		if (instance == null)
 		{
 			instance = this;
@@ -39,7 +43,7 @@ public class GameManager : MonoBehaviour {
 			Destroy(gameObject);
 		}
 		instance = this;
-        pLives.text = ("Player Lives = " + playerLives);
+        pLives.text = ("Player Lives = " + playerLives);// sets lives to player lives and display
     }
 	
 	// Update is called once per frame

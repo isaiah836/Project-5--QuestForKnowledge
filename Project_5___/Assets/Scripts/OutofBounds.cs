@@ -18,9 +18,9 @@ public class OutofBounds : MonoBehaviour {
     {
         if (other.gameObject.tag == "player")
         {
-            other.gameObject.transform.position = other.gameObject.GetComponent<PawnPlayer>().startPosition;
+            other.gameObject.transform.position = other.gameObject.GetComponent<PawnPlayer>().startPosition;//sets player to last checkpoint
             --GameManager.instance.playerLives;
-            GameManager.instance.pLives.text = ("Player Lives = " + GameManager.instance.playerLives);
+            GameManager.instance.pLives.text = ("Player Lives = " + GameManager.instance.playerLives);//updates the canvas diplaying the lives
         }
     }
 

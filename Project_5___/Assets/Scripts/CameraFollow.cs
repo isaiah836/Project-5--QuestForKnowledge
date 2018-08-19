@@ -13,6 +13,7 @@ public class CameraFollow : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+		// this code sets x and y of camer to player position
         float x = Mathf.Clamp(player.transform.position.x, -10000, 10000);
         float y = Mathf.Clamp(player.transform.position.y, -10000, 10000);
         gameObject.transform.position = new Vector3(x, y, gameObject.transform.position.z);

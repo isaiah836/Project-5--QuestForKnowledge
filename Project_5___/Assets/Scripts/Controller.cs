@@ -4,5 +4,5 @@ using UnityEngine;
 
 public abstract class Controller : MonoBehaviour {
 	public Pawn pawn;// Grabs pawn
-    private Transform tf;
+    private Transform tf;//variable for transform
 }

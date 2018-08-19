@@ -14,12 +14,12 @@ public class ControllerPlayer : Controller {
     public AudioSource audio; // grabs audio component
     public float shootDelay;
 
-	public SpriteRenderer sr;
+	public SpriteRenderer sr;//variable for sprite renderer
 
 	public bool isMove; // a bool to see if the player is moving
 	public bool isJump; // a bool that will tell if player is jumping
     public bool isShoot; // bool for shooting
-    public bool canShoot = true;
+    public bool canShoot = true;// bool used for controlling how often the player can shoot
 
 	// Use this for initialization
 	void Start () {
@@ -102,6 +102,7 @@ public class ControllerPlayer : Controller {
         }
 	}
 
+	//makes the player wait a set time before being able to fire again
     IEnumerator Shooting()
     {
         yield return new WaitForSeconds(shootDelay);

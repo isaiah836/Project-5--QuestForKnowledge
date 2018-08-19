@@ -13,7 +13,7 @@ public class KnowledgeAcquired : MonoBehaviour {
 		
 	}
 
-	void OnTriggerEnter2D(Collider2D other)
+	void OnTriggerEnter2D(Collider2D other)//if player enters trigger display victory screen
 	{
 		if(other.gameObject.tag == "player")
 		{
